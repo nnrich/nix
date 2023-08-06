@@ -237,7 +237,7 @@ in {
   services.devmon.enable = true;
   services.dbus.enable = true;
   systemd.services.openvpn-foo.serviceConfig.ExecStart =
-    "${pkgs.openvpn}/bin/openvpn --ifconfig-noexec --route-noexec --up ${vpn-netns}/bin/vpn-netns --route-up ${vpn-netns}/bin/vpn-netns --down ${vpn-netns}/bin/vpn-netns --script-security 2 --config /home/rcook/nl-ams.prod.surfshark.com_udp.ovpn";
+    "${pkgs.openvpn}/bin/openvpn --ifconfig-noexec --route-noexec --up ${vpn-netns}/bin/vpn-netns --route-up ${vpn-netns}/bin/vpn-netns --down ${vpn-netns}/bin/vpn-netns --script-security 2 --config /home/rcook/vpnconfig.ovpn";
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages =
     [ "openssl-1.1.1u" "openssl-1.1.1v" ];

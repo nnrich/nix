@@ -10,6 +10,9 @@ local config = {
 
         require('lsp_mappings/keymaps')
 
+        jdtls.setup_dap({hotcodereplace = 'auto'})
+        jdtls.setup.add_command()
+
         vim.keymap.set('n', '<leader>oi', jdtls.organize_imports, opts)
         vim.keymap.set('n', '<leader>dt', jdtls.test_class, opts)
         -- vim.keymap.set('n', '<leader>gt', vim.cmd("lua require('jdtls.tests').generate()"), opts)
@@ -47,12 +50,12 @@ local bundles = {
         true)
 }
 
-vim.list_extend(bundles, vim.split(vim.fn.glob("./dap/vscode-java-test/server/*.jar", true), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob("./dap/vscode-java-test/*.jar", true), "\n"))
 
 config["init_options"] = {
     bundles = bundles
 }
 
-require('jdtls.setup').add_commands()
+-- require('jdtls.setup').add_commands()
 require('jdtls').start_or_attach(config)
-require('jdtls.dap').setup_dap(config)
+-- require('jdtls.dap').setup_dap(config)

@@ -142,6 +142,7 @@
         "google-chrome-stable --disable-web-security --user-data-dir=$HOME/tmp/chromium";
       ll = "ls -l";
       ha = "history 0 | grep ";
+      nrs = "sudo nixos-rebuild switch --flake ~/nix/config";
     };
 
     history = {
